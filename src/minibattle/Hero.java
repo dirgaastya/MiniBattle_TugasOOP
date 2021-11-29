@@ -41,9 +41,13 @@ public class Hero {
                 infoDef(enemy, damage);
             }else{
                 this.hp -= damage;             
-                infoDef(enemy, damage);
                 if (this.hp<=0) {
+                        this.hp=0;
                         System.out.println(this.name + " telah dikalahkan\n");
+                        infoDef(enemy, damage);
+                        
+                    }else{
+                       infoDef(enemy, damage); 
                     }
                 }
             }else if (attack=="skill") {
@@ -53,10 +57,13 @@ public class Hero {
                     infoDef(enemy, damage);
                 }else{
                     this.hp -= damage;
-                    infoDef(enemy, damage);
                     if (this.hp<=0) {
                         this.hp=0;
                         System.out.println(this.name + " telah dikalahkan\n");
+                        infoDef(enemy, damage);
+                        
+                    }else{
+                       infoDef(enemy, damage); 
                     }
                 }
             }
