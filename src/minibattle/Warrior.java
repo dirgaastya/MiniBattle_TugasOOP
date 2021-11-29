@@ -14,7 +14,7 @@ public class Warrior extends Hero {
         super(name);
         super.hp+=400;
         super.atk+=300;
-        super.matk+=50;
+        super.matk+=100;
         super.def+=60;
         super.mdef+=60;
     }

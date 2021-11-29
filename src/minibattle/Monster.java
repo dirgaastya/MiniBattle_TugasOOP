@@ -15,8 +15,8 @@ public class Monster {
     public Monster(String name) {
         this.name = name;
         this.hp = 1500;
-        this.atk = 100;
-        this.matk = 150;
+        this.atk = 200;
+        this.matk = 350;
         this.def = 50;
         this.mdef = 50;
         

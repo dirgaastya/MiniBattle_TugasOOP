@@ -13,7 +13,7 @@ public class Mage extends Hero{
     public Mage(String name) {
         super(name);
         super.hp+=300;
-        super.atk+=50;
+        super.atk+=100;
         super.matk+=300;
         super.def+=60;
         super.mdef+=60;

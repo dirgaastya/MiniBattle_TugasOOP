@@ -15,8 +15,8 @@ public class Hero {
     Hero(String name) {
         this.name = name;
         this.hp = 500;
-        this.atk = 50;
-        this.matk = 50;
+        this.atk = 100;
+        this.matk = 100;
         this.def = 50;
         this.mdef = 50;
         
@@ -40,8 +40,11 @@ public class Hero {
                 damage=0;
                 infoDef(enemy, damage);
             }else{
-                this.hp -= damage;
+                this.hp -= damage;             
                 infoDef(enemy, damage);
+                if (this.hp<=0) {
+                        System.out.println(this.name + " telah dikalahkan\n");
+                    }
                 }
             }else if (attack=="skill") {
             damage=enemy.getMatk()- this.mdef;
@@ -51,12 +54,14 @@ public class Hero {
                 }else{
                     this.hp -= damage;
                     infoDef(enemy, damage);
+                    if (this.hp<=0) {
+                        this.hp=0;
+                        System.out.println(this.name + " telah dikalahkan\n");
+                    }
                 }
             }
+       
         
-        if (this.hp<=0) {
-            System.out.println(this.name + " telah dikalahkan\n");
-        }
     }
 
    public void infoDef(Monster enemy,int damage){

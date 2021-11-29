@@ -24,10 +24,9 @@ public class MainBattle {
         newHero.attack(indosiarDragon);
         newHero.defend(indosiarDragon, "basic"); //Parameter dapat diisi
         newHero.defend(indosiarDragon, "skill");//hanya dengan basic dan skill
-//        newHero.defend(indosiarDragon, "skill");
-//        newHero.defend(indosiarDragon, "skill");
-//        newHero.defend(indosiarDragon, "skill");
-//        newHero.defend(indosiarDragon, "basic");
+        newHero.defend(indosiarDragon, "basic");
+
+
        
    
 //       Spawn Mage
@@ -40,10 +39,10 @@ public class MainBattle {
 //      Spawn Warrior
         Warrior newWarrior = new Warrior("Knight");
         newWarrior.attack(indosiarDragon);
-        newWarrior.swordSkill(indosiarDragon);
         newWarrior.defend(indosiarDragon, "basic");
         newWarrior.defend(indosiarDragon, "skill");
         newWarrior.swordSkill(indosiarDragon);
+        
         
     }
     
