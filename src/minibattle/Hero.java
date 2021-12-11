@@ -19,8 +19,6 @@ public class Hero {
         this.matk = 100;
         this.def = 50;
         this.mdef = 50;
-        
-        System.out.println("Hero " + name + " Memasuki Battle");
     }
     
     public void attack(Monster enemy){
@@ -74,17 +72,17 @@ public class Hero {
    public void infoDef(Monster enemy,int damage){
         
         System.out.println("\nMonster "+ enemy.name  + (" Menyerang " + this.name ));
-        System.out.println("Damage yang diberikan " + enemy.name +" sebesar\t\t: " + enemy.getAtk());
-        System.out.println("Damage yang diterima " + this.name + " sebesar\t\t\t\t: " + damage);
-        System.out.println("Sisa HP " + this.name + " sebesar\t\t\t\t\t\t: " + this.hp +"\n");
+        System.out.println("Damage yang diberikan " + enemy.name +" sebesar\t\t\t: " + enemy.getAtk());
+        System.out.println("Damage yang diterima " + this.name + " sebesar\t\t\t: " + damage);
+        System.out.println("Sisa HP " + this.name + " sebesar\t\t\t\t: " + this.hp +"\n");
         
     }
     
     public void infoAtk(Monster enemy, int damage){
         System.out.println("\n"+this.name + " Menyerang monster "+ enemy.name);
-        System.out.println("Damage yang diberikan " + this.name +" sebesar\t\t\t\t: " + this.atk);
-        System.out.println("Damage yang diterima monster "+ enemy.name + " sebesar\t: " + damage);
-        System.out.println("Sisa HP monster " + enemy.name +" sebesar\t\t\t: " + enemy.getHp()+"\n");
+        System.out.println("Damage yang diberikan " + this.name +" sebesar\t\t\t: " + this.atk);
+        System.out.println("Damage yang diterima monster "+ enemy.name + " sebesar\t\t: " + damage);
+        System.out.println("Sisa HP monster " + enemy.name +" sebesar\t\t\t\t: " + enemy.getHp()+"\n");
     }
     
     public void showAttribut(){
@@ -95,6 +93,8 @@ public class Hero {
         System.out.println("DEF\t\t: "+ this.def);
         System.out.println("MDEF\t\t: "+ this.mdef);
     }
+
+  
     
     
     

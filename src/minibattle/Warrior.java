@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package minibattle;
-
 /**
  *
  * @author user
@@ -32,8 +31,8 @@ public class Warrior extends Hero {
     
     public void infoHybridAtk(Monster enemy, int damage){
         System.out.println("\n"+this.name + " Menyerang monster "+ enemy.name + " dengan Sword Skill");
-        System.out.println("Damage yang diberikan " + this.name +" sebesar\t\t\t\t: " + (this.matk+this.atk));
-        System.out.println("Damage yang diterima monster "+ enemy.name + " sebesar\t: " + damage);
-        System.out.println("Sisa HP monster " + enemy.name +" sebesar\t\t\t: " + enemy.getHp()+"\n");
+        System.out.println("Damage yang diberikan " + this.name +" sebesar\t\t\t: " + (this.matk+this.atk));
+        System.out.println("Damage yang diterima monster "+ enemy.name + " sebesar\t\t: " + damage);
+        System.out.println("Sisa HP monster " + enemy.name +" sebesar\t\t\t\t: " + enemy.getHp()+"\n");
     }
 }

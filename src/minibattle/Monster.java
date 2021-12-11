@@ -19,8 +19,7 @@ public class Monster {
         this.matk = 350;
         this.def = 50;
         this.mdef = 50;
-        
-        System.out.println("Monster " + this.name + " Memasuki Arena");
+
     }
 
     public int getHp() {
