@@ -13,18 +13,6 @@ import java.util.Scanner;
 public class ActionMenu {
     Scanner newObj = new Scanner(System.in);
     
-    private String heroName;
-
-    public String getHeroName() {
-        return heroName;
-    }
-
-    public void setHeroName(String heroName) {
-        this.heroName = heroName;
-    }
-    
-    
-
    
     public int getMenu(){
         int input;
@@ -42,8 +30,8 @@ public class ActionMenu {
        
     }
     
-    public int getHero(String nama){
-        int input;
+    public String getHero(String nama){
+        String input;
         System.out.println("\nSelamat Datang " + nama + " Silahkan Pilih Job Anda");
         System.out.println("===================================");
         System.out.println("1. Basic Hero");
@@ -51,7 +39,7 @@ public class ActionMenu {
         System.out.println("3. Warrior");
         System.out.println("===================================");    
         System.out.print("Pilih Class Hero\t: ");
-        input = newObj.nextInt();
+        input = newObj.nextLine();
         return input;
     }
     
@@ -74,7 +62,10 @@ public class ActionMenu {
         return input;
     }
     
-    
+    public String inputName(){
+        
+        return input;
+    }
         
 }
     

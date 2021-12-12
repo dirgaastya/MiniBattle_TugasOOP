@@ -20,7 +20,11 @@ public class Hero {
         this.def = 50;
         this.mdef = 50;
     }
-    
+
+    public int getHp() {
+        return hp;
+    }
+
     public void attack(Monster enemy){
         int damage = this.atk-enemy.getDef();
         enemy.setHp(damage);
