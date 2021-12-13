@@ -44,28 +44,30 @@ public class ActionMenu {
     }
     
     
-    public void getMonster(String nama){
+    public String getMonster(){
+        String input;
         System.out.println("\n===================================");
-        System.out.println("Anda akan Melawan Monster " + nama);
+        System.out.println("1. Slime");
+        System.out.println("2. Goblin");
+        System.out.println("3. Dragon");
         System.out.println("===================================");
+        System.out.print("Pilih Monster\t: ");
+        input = newObj.nextLine();
+        return input;
     }
     
-    public int getFightMenu(){
-        int input;
+    public String getFightMenu(){
+        String input;
         System.out.println("Pilih Tindakan ");
         System.out.println("===================================");
         System.out.println("1. Serang");
         System.out.println("2. Skill");
         System.out.println("===================================");
         System.out.print("Pilih\t\t: ");
-        input = newObj.nextInt();
+        input = newObj.nextLine();
         return input;
     }
     
-    public String inputName(){
-        
-        return input;
-    }
         
 }
     

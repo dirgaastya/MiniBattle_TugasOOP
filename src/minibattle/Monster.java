@@ -8,12 +8,13 @@ package minibattle;
  *
  * @author user
  */
-public class Monster {
+abstract class Monster {
     public  String name;
-    private int hp,atk,matk,def,mdef;
+    protected int hp,atk,matk,def,mdef;
+    abstract void passiveMonster();
 
-    public Monster(String name) {
-        this.name = name;
+    public Monster() {
+        this.name = null;
         this.hp = 1500;
         this.atk = 200;
         this.matk = 350;
@@ -74,11 +75,6 @@ public class Monster {
         System.out.println("DEF\t\t: "+ this.def);
         System.out.println("MDEF\t\t: "+ this.mdef+"\n");
     }
-    
-   
-
-
-    
-    
+        
     
 }

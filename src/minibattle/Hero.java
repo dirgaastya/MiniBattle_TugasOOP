@@ -15,7 +15,7 @@ public class Hero {
     Hero(String name) {
         this.name = name;
         this.hp = 500;
-        this.atk = 100;
+        this.atk = 1630;
         this.matk = 100;
         this.def = 50;
         this.mdef = 50;

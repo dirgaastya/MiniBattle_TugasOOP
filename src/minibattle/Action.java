@@ -10,8 +10,7 @@ package minibattle;
  */
 public class Action extends ActionMenu{
    
-    private  String inputName;
-    
+      
     public void selectHero(String input,String name){
         if(input.equalsIgnoreCase("1")){
             Hero newHero = new Hero(name);
@@ -25,132 +24,193 @@ public class Action extends ActionMenu{
         }
     }
     
+    public String selectMonster(String input){
+        String monsterValue = null;
+        if(input.equalsIgnoreCase("1")){
+            System.out.println("Anda Melawan Mosnter Slime");
+            Monster slimeMonster = new Slime();
+            monsterValue = "slimeMonster";
+        }else if (input.equalsIgnoreCase("2")){
+            
+            System.out.println("Anda Memilih Job Mage Hero");   
+        } else if (input.equalsIgnoreCase("3")){
+            
+            System.out.println("Anda Memilih Job Warior Hero");  
+        }
+        return monsterValue;
+    }
     
+    public void basicFight(String inputNama, String monsterValue){
+        Hero hero = new Hero(inputNama);
+        Monster newSlimeMonster = new Slime();   
+        boolean status =false;
+        int passiveCount=0;
+        
+        while(status!=true){
+                    
+            String input = getFightMenu();
+            if (monsterValue.equalsIgnoreCase("1")) {
+                switch(input){
+                    case "1":
+                        hero.attack(newSlimeMonster);
+                        //Monster Mati
+                        if (newSlimeMonster.getHp()<=0) {
+                            System.out.println("Program Selesai");
+                            status=true;
+                            System.exit(0);
+                            break;
+                        }
+                        //Hero Mati
+                        if (hero.getHp()<= 0) {
+                            status=true;
+                            System.exit(0);
+                            break;
+                        }
+                        //Pasif Monster 1x aktif
+                        if (newSlimeMonster.getHp()<=300) {
+                            if (passiveCount==0) {
+                                newSlimeMonster.passiveMonster();
+                                passiveCount++;
+                            }
+                        }
+                        hero.defend(newSlimeMonster, "basic");
+                        break;
+                    case "2":
+                        System.out.println("Anda belum mempelajari skill apapun");
+                }
+            }
+            
+        }  
+    }
     
-//        
-//    public void play(){
-//        System.out.print("Masukan Nama Hero\t: ");
-//        String namaHero = newObj.nextLine();
-//        System.out.print("Masukan Nama Monster\t: ");
-//        String namaMonster = newObj.nextLine();
-//        Monster newMonster = new Monster(namaMonster);       
-//        boolean status = false;
-//        
-//        int heroClass = getHero(namaHero);
-//        switch (heroClass) {
-//            case 1:
-//                Hero newHero = new Hero(namaHero);
-//                newHero.showAttribut();
-//                getMonster(namaMonster);
-//                int fight = getFightMenu();
-//                
-//                while (status != true) {                    
-//                    switch (fight) {
-//                        case 1:
-//                            newHero.attack(newMonster);
-//                            newHero.defend(newMonster, "basic");
-//                            if (newHero.getHp()==0) {
-//                                status=true;
-//                                break;
-//                            }
-//                            break;
-//                        case 2:
-//                            System.out.println("Job ini belu mempelajari Skill apapun");
-//                            break;
-//                        default:
-//                            System.out.println("Maaf Pilihan Anda kurang tepat");
-//                            break;
-//                    }
-//                    
-//                     if (newMonster.getHp()== 0 ) {
-//                        status = true;
-//                        break;
-//                    }
-//                     getFightMenu();
-//                }
-//                    
-//                break;
-//
-//            case 2:
-//                Mage newMage = new Mage(namaHero);
-//                newMage.showAttribut();
-//                getMonster(namaMonster);
-//                int fightMage = getFightMenu();
-//                while (status != true) {                    
-//                    switch (fightMage) {
-//                        case 1:
-//                            newMage.attack(newMonster);
-//                            newMage.defend(newMonster, "basic");
-//                            if (newMage.getHp()==0) {
-//                                status = true;
-//                                break;
-//                            }
-//                            break;     
-//                        case 2:
-//                            newMage.magicSkill(newMonster);
-//                            newMage.defend(newMonster, "skill");
-//                            if (newMage.getHp()==0) {
-//                                status = true;
-//                                break;
-//                            }
-//                            break;
-//                        default:
-//                            System.out.println("Maaf Pilihan Anda kurang tepat");
-//                            break;
-//                    }
-//                    
-//                     if (newMonster.getHp()== 0 ) {
-//                        status = true;
-//                        break;
-//                    }
-//                     fightMage=getFightMenu();
-//                }
-//                    
-//                break;
-//            case 3:               
-//                Warrior newWarrior = new Warrior(namaHero);
-//                newWarrior.showAttribut();
-//                getMonster(namaMonster);
-//                int fightWarrior = getFightMenu();
-//                while (status != true) {                    
-//                    switch (fightWarrior) {
-//                        case 1:
-//                            newWarrior.attack(newMonster);
-//                            newWarrior.defend(newMonster, "basic");
-//                            if (newWarrior.getHp()==0) {
-//                                status = true;
-//                                break;
-//                            }
-//                            break;     
-//                        case 2:
-//                            newWarrior.swordSkill(newMonster);
-//                            newWarrior.defend(newMonster, "skill");
-//                            if (newWarrior.getHp()==0) {
-//                                status = true;
-//                                break;
-//                            }
-//                            break;
-//                        default:
-//                            System.out.println("Maaf Pilihan Anda tidak tersedia");
-//                            break;
-//                    }
-//                    
-//                     if (newMonster.getHp()!= 0) {
-//                        fightWarrior=getFightMenu();
-//                        
-//                    }else{
-//                        status = true;
-//                        break;
-//                     }
-//                     
-//                }
-//                break;
-//            default:
-//                break;   
-//        }
-//        System.out.println("Program Telah Selesai ");   
-//    }
-
+    public void mageFight(String inputNama, String monsterValue){
+        Mage mage = new Mage(inputNama);
+        Monster newSlimeMonster = new Slime();   
+        boolean status =false;
+        int passiveCount=0;
+        
+        while(status!=true){
+            String input = getFightMenu();
+            if (monsterValue.equalsIgnoreCase("1")) {
+                switch(input){
+                    case "1":
+                        mage.attack(newSlimeMonster);
+                        //Monster Mati
+                        if (newSlimeMonster.getHp()<=0) {
+                            System.out.println("Program Selesai");
+                            status=true;
+                            System.exit(0);
+                            break;
+                        }
+                        //Hero Mati
+                        if (mage.getHp()<= 0) {
+                            status=true;
+                            System.exit(0);
+                            break;
+                        }
+                        //Pasif Monster 1x aktif
+                        if (newSlimeMonster.getHp()<=300) {
+                            if (passiveCount==0) {
+                                newSlimeMonster.passiveMonster();
+                                passiveCount++;
+                            }
+                        }
+                        mage.defend(newSlimeMonster, "basic");
+                        break;
+                    case "2":
+                        mage.magicSkill(newSlimeMonster);
+                        //Monster Mati
+                        if (newSlimeMonster.getHp()<=0) {
+                            System.out.println("Program Selesai");
+                            status=true;
+                            System.exit(0);
+                            break;
+                        }
+                        //Hero Mati
+                        if (mage.getHp()<= 0) {
+                            status=true;
+                            System.exit(0);
+                            break;
+                        }
+                        //Pasif Monster 1x aktif
+                        if (newSlimeMonster.getHp()<=300) {
+                            if (passiveCount==0) {
+                                newSlimeMonster.passiveMonster();
+                                passiveCount++;
+                            }
+                        }
+                        mage.defend(newSlimeMonster, "skill");
+                        break;
+                }
+            }
+            }
+        }
+    
+    public void warriorFight(String inputNama, String monsterValue){
+        Warrior warrior = new Warrior(inputNama);
+        Monster newSlimeMonster = new Slime();   
+        boolean status =false;
+        int passiveCount=0;
+        
+        while(status!=true){
+            String input = getFightMenu();
+            if (monsterValue.equalsIgnoreCase("1")) {
+                switch(input){
+                    case "1":
+                        warrior.attack(newSlimeMonster);
+                        //Monster Mati
+                        if (newSlimeMonster.getHp()<=0) {
+                            System.out.println("Program Selesai");
+                            status=true;
+                            System.exit(0);
+                            break;
+                        }
+                        //Hero Mati
+                        if (warrior.getHp()<= 0) {
+                            status=true;
+                            System.exit(0);
+                            break;
+                        }
+                        //Pasif Monster 1x aktif
+                        if (newSlimeMonster.getHp()<=300) {
+                            if (passiveCount==0) {
+                                newSlimeMonster.passiveMonster();
+                                passiveCount++;
+                            }
+                        }
+                        warrior.defend(newSlimeMonster, "basic");
+                        break;
+                    case "2":
+                        warrior.swordSkill(newSlimeMonster);
+                        //Monster Mati
+                        if (newSlimeMonster.getHp()<=0) {
+                            System.out.println("Program Selesai");
+                            status=true;
+                            System.exit(0);
+                            break;
+                        }
+                        //Hero Mati
+                        if (warrior.getHp()<= 0) {
+                            status=true;
+                            System.exit(0);
+                            break;
+                        }
+                        //Pasif Monster 1x aktif
+                        if (newSlimeMonster.getHp()<=300) {
+                            if (passiveCount==0) {
+                                newSlimeMonster.passiveMonster();
+                                passiveCount++;
+                            }
+                        }
+                        warrior.defend(newSlimeMonster, "skill");
+                        break;
+                }
+            }
+        }
+    }
+}
+    
+   
     
 
    
@@ -158,4 +218,4 @@ public class Action extends ActionMenu{
     
     
     
-}
+
