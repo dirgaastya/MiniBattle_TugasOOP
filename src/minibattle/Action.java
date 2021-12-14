@@ -45,28 +45,37 @@ public class Action extends ActionMenu {
         int passiveCount = 0;
 
         while (status != true) {
-
+            // Monster Mati
+            if (newSlimeMonster.getHp() <= 0) {
+                System.out.println("Program Selesai");
+                status = true;
+                System.exit(0);
+                break;
+            }else if (newGoblinMonster.getHp() <= 0) {
+                System.out.println("Program Selesai");
+                status = true;
+                System.exit(0);
+                break;
+            }else if (newIbdMonster.getHp() <=0){
+                System.out.println("Program Selesai");
+                status = true;
+                System.exit(0);
+                break;
+            }
+            // Hero Mati
+            if (hero.getHp() <= 0) {
+                status = true;
+                System.exit(0);
+                break;
+            }           
             String input = getFightMenu();
             // Monster Slime
             if (monsterValue.equalsIgnoreCase("1")) {
                 switch (input) {
                     case "1":
                         hero.attack(newSlimeMonster);
-                        // Monster Mati
-                        if (newSlimeMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (hero.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif Monster 1x aktif
-                        if (newSlimeMonster.getHp() <= 300) {
+                        if (newSlimeMonster.getHp() <= 500) {
                             if (passiveCount == 0) {
                                 newSlimeMonster.passiveMonster();
                                 passiveCount++;
@@ -82,20 +91,7 @@ public class Action extends ActionMenu {
             else if (input.equalsIgnoreCase("2")) {
                 switch (input) {
                     case "1":
-                        hero.attack(newGoblinMonster);
-                        // Monster Mati
-                        if (newGoblinMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (hero.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
+                        hero.attack(newGoblinMonster);                       
                         // Pasif Goblin hp dibawah 700 physical def & atknaik
                         if (newGoblinMonster.getHp() <= 700) {
                             newGoblinMonster.passiveMonster();
@@ -111,19 +107,6 @@ public class Action extends ActionMenu {
                 switch (input) {
                     case "1":
                         hero.attack(newIbdMonster);
-                        // Monster Mati
-                        if (newIbdMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (hero.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif HHp diatas 1500 Physical Def++++++ dan Magic Def ++
                         if (newIbdMonster.getHp() >= 1500) {
                             newIbdMonster.passiveMonster();
@@ -146,24 +129,34 @@ public class Action extends ActionMenu {
         int passiveCount = 0;
 
         while (status != true) {
+            // Monster Mati
+            if (newSlimeMonster.getHp() <= 0) {
+                System.out.println("Program Selesai");
+                status = true;
+                System.exit(0);
+                break;
+            }else if (newGoblinMonster.getHp() <= 0) {
+                System.out.println("Program Selesai");
+                status = true;
+                System.exit(0);
+                break;
+            }else if (newIbdMonster.getHp() <=0){
+                System.out.println("Program Selesai");
+                status = true;
+                System.exit(0);
+                break;
+            }
+            // Hero Mati
+            if (mage.getHp() <= 0) {
+                status = true;
+                System.exit(0);
+                break;
+            }   
             String input = getFightMenu();
             if (monsterValue.equalsIgnoreCase("1")) {
                 switch (input) {
                     case "1":
                         mage.attack(newSlimeMonster);
-                        // Monster Mati
-                        if (newSlimeMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (mage.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif Monster 1x aktif
                         if (newSlimeMonster.getHp() <= 300) {
                             if (passiveCount == 0) {
@@ -175,19 +168,6 @@ public class Action extends ActionMenu {
                         break;
                     case "2":
                         mage.magicSkill(newSlimeMonster);
-                        // Monster Mati
-                        if (newSlimeMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (mage.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif Monster 1x aktif
                         if (newSlimeMonster.getHp() <= 300) {
                             if (passiveCount == 0) {
@@ -204,19 +184,6 @@ public class Action extends ActionMenu {
                 switch (input) {
                     case "1":
                         mage.attack(newGoblinMonster);
-                        // Monster Mati
-                        if (newGoblinMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (mage.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif Goblin hp dibawah 700 physical def & atknaik
                         if (newGoblinMonster.getHp() <= 700) {
                             newGoblinMonster.passiveMonster();
@@ -225,19 +192,6 @@ public class Action extends ActionMenu {
                         break;
                     case "2":
                         mage.magicSkill(newGoblinMonster);
-                        // Monster Mati
-                        if (newGoblinMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (mage.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif Goblin hp dibawah 700 physical def & atknaik
                         if (newGoblinMonster.getHp() <= 700) {
                             newGoblinMonster.passiveMonster();
@@ -251,19 +205,6 @@ public class Action extends ActionMenu {
                 switch (input) {
                     case "1":
                         mage.attack(newIbdMonster);
-                        // Monster Mati
-                        if (newIbdMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (mage.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif HHp diatas 1500 Physical Def++++++ dan Magic Def ++
                         if (newIbdMonster.getHp() >= 1500) {
                             newIbdMonster.passiveMonster();
@@ -272,19 +213,6 @@ public class Action extends ActionMenu {
                         break;
                     case "2":
                         mage.magicSkill(newIbdMonster);
-                        // Monster Mati
-                        if (newIbdMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (mage.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif HHp diatas 1500 Physical Def++++++ dan Magic Def ++
                         if (newIbdMonster.getHp() >= 1500) {
                             newIbdMonster.passiveMonster();
@@ -304,24 +232,34 @@ public class Action extends ActionMenu {
         int passiveCount = 0;
 
         while (status != true) {
+            // Monster Mati
+            if (newSlimeMonster.getHp() <= 0) {
+                System.out.println("Program Selesai");
+                status = true;
+                System.exit(0);
+                break;
+            }else if (newGoblinMonster.getHp() <= 0) {
+                System.out.println("Program Selesai");
+                status = true;
+                System.exit(0);
+                break;
+            }else if (newIbdMonster.getHp() <=0){
+                System.out.println("Program Selesai");
+                status = true;
+                System.exit(0);
+                break;
+            }
+            // Hero Mati
+            if (warrior.getHp() <= 0) {
+                status = true;
+                System.exit(0);
+                break;
+            }   
             String input = getFightMenu();
             if (monsterValue.equalsIgnoreCase("1")) {
                 switch (input) {
                     case "1":
                         warrior.attack(newSlimeMonster);
-                        // Monster Mati
-                        if (newSlimeMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (warrior.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif Monster 1x aktif
                         if (newSlimeMonster.getHp() <= 300) {
                             if (passiveCount == 0) {
@@ -333,19 +271,6 @@ public class Action extends ActionMenu {
                         break;
                     case "2":
                         warrior.swordSkill(newSlimeMonster);
-                        // Monster Mati
-                        if (newSlimeMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (warrior.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif Monster 1x aktif
                         if (newSlimeMonster.getHp() <= 300) {
                             if (passiveCount == 0) {
@@ -362,19 +287,6 @@ public class Action extends ActionMenu {
                 switch (input) {
                     case "1":
                         warrior.attack(newGoblinMonster);
-                        // Monster Mati
-                        if (newGoblinMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (warrior.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif Goblin hp dibawah 700 physical def & atknaik
                         if (newGoblinMonster.getHp() <= 700) {
                             newGoblinMonster.passiveMonster();
@@ -383,19 +295,6 @@ public class Action extends ActionMenu {
                         break;
                     case "2":
                         warrior.swordSkill(newGoblinMonster);
-                        // Monster Mati
-                        if (newGoblinMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (warrior.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif Goblin hp dibawah 700 physical def & atknaik
                         if (newGoblinMonster.getHp() <= 700) {
                             newGoblinMonster.passiveMonster();
@@ -409,19 +308,6 @@ public class Action extends ActionMenu {
                 switch (input) {
                     case "1":
                         warrior.attack(newIbdMonster);
-                        // Monster Mati
-                        if (newIbdMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (warrior.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif HHp diatas 1500 Physical Def++++++ dan Magic Def ++
                         if (newIbdMonster.getHp() >= 1500) {
                             newIbdMonster.passiveMonster();
@@ -430,19 +316,6 @@ public class Action extends ActionMenu {
                         break;
                     case "2":
                         warrior.swordSkill(newIbdMonster);
-                        // Monster Mati
-                        if (newIbdMonster.getHp() <= 0) {
-                            System.out.println("Program Selesai");
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
-                        // Hero Mati
-                        if (warrior.getHp() <= 0) {
-                            status = true;
-                            System.exit(0);
-                            break;
-                        }
                         // Pasif HHp diatas 1500 Physical Def++++++ dan Magic Def ++
                         if (newIbdMonster.getHp() >= 1500) {
                             newIbdMonster.passiveMonster();

@@ -12,17 +12,17 @@ public class IbdMonster extends Monster {
 
     public IbdMonster() {
         super.name = "Indosiar Black Dragon";
-        super.hp += 1000;
-        super.atk += 200;
-        super.matk += 400;
-        super.def += 260;
-        super.mdef += 260;
+        super.hp += 1100;
+        super.atk += 400;
+        super.matk += 300;
+        super.def += 60;
+        super.mdef += 60;
     }
 
     @Override
     void passiveMonster() {
-        super.def += 1000000;
-        super.mdef += 100;
+        super.def += 500;
+        super.mdef += 300;
         System.out.println(
                 "Passive Monster Indosiar Black Dragon telah aktif! Indosiar Black Dragon Magical Def ++ & Physical Def +++++++++++++");
     }

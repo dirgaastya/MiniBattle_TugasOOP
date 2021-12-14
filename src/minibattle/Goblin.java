@@ -12,16 +12,16 @@ public class Goblin extends Monster {
 
     public Goblin() {
         super.name = "Goblin";
-        super.hp += 300;
-        super.atk += 100;
-        super.matk += 300;
-        super.def += 60;
-        super.mdef += 60;
+        super.hp += 600;
+        super.atk += 300;
+        super.matk += 150;
+        super.def += 45;
+        super.mdef += 35;
     }
 
     @Override
     void passiveMonster() {
-        super.def += 300;
+        super.def += 90;
         super.atk += 100;
         System.out.println("Passive Monster Goblin telah aktif! Goblin Physical ATK ++ & Physical Def ++");
     }

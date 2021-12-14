@@ -15,11 +15,11 @@ abstract class Monster {
 
     public Monster() {
         this.name = null;
-        this.hp = 1500;
-        this.atk = 200;
-        this.matk = 350;
-        this.def = 50;
-        this.mdef = 50;
+        this.hp = 800;
+        this.atk = 150;
+        this.matk = 150;
+        this.def = 65;
+        this.mdef = 65;
 
     }
 

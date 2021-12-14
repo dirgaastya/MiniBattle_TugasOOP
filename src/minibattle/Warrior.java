@@ -11,16 +11,19 @@ public class Warrior extends Hero {
 
     public Warrior(String name) {
         super(name);
-        super.hp+=400;
-        super.atk+=300;
-        super.matk+=100;
-        super.def+=60;
-        super.mdef+=60;
+        super.hp+=1000;
+        super.atk+=250;
+        super.matk+=90;
+        super.def+=120;
+        super.mdef+=70;
     }
      
     public void swordSkill(Monster enemy){
         int damage;
         damage=(this.atk-enemy.getDef())+(this.matk-enemy.getMdef());
+        if (damage<=0){
+            damage=0;
+        }
         enemy.setHp(damage);
         infoHybridAtk(enemy, damage);
         

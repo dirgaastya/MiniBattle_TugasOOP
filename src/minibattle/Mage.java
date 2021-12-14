@@ -12,17 +12,20 @@ public class Mage extends Hero{
 
     public Mage(String name) {
         super(name);
-        super.hp+=300;
-        super.atk+=100;
-        super.matk+=300;
-        super.def+=60;
-        super.mdef+=60;
+        super.hp+=1000;
+        super.atk+=70;
+        super.matk+=280;
+        super.def+=45;
+        super.mdef+=55;
     }
 
      
     public void magicSkill(Monster enemy){
         int damage;
-        damage=this.matk*2 - enemy.getDef();
+        damage=this.matk*2 - enemy.getMdef();
+        if (damage<=0){
+            damage=0;
+        }
         enemy.setHp(damage);
         infoMatk(enemy, damage);
         if (enemy.getHp()<=0) {

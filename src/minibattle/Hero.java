@@ -14,11 +14,11 @@ public class Hero {
 
     Hero(String name) {
         this.name = name;
-        this.hp = 500;
-        this.atk = 1630;
-        this.matk = 100;
-        this.def = 50;
-        this.mdef = 50;
+        this.hp = 800;
+        this.atk = 210;
+        this.matk = 110;
+        this.def = 75;
+        this.mdef = 65;
     }
 
     public int getHp() {
@@ -27,6 +27,9 @@ public class Hero {
 
     public void attack(Monster enemy){
         int damage = this.atk-enemy.getDef();
+        if (damage<=0){
+            damage=0;
+        }
         enemy.setHp(damage);
         infoAtk(enemy, damage);
         if (enemy.getHp()<=0) {

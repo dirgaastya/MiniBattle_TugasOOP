@@ -12,10 +12,10 @@ public class Slime extends Monster{
      public Slime(){
         super.name="Slime";
         super.hp+=300;
-        super.atk+=100;
-        super.matk+=300;
-        super.def+=60;
-        super.mdef+=60; 
+        super.atk+=200;
+        super.matk+=100;
+        super.def+=40;
+        super.mdef+=30; 
      }
 
     @Override
