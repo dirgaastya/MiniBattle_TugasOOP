@@ -23,6 +23,16 @@ public class Slime extends Monster{
         super.hp+=500;
         System.out.println("Passive Monster Slime telah aktif! Slime HP++");
     }
+
+    public void showAttribut() {
+        System.out.println("\nAttribut Monster " + super.name);
+        System.out.println("HP\t\t: " + super.hp);
+        System.out.println("ATK\t\t: " + super.atk);
+        System.out.println("MATK\t\t: " + super.matk);
+        System.out.println("DEF\t\t: " + super.def);
+        System.out.println("MDEF\t\t: " + super.mdef + "\n");
+        System.out.println("Passive\t\t: HP Slime dibawah 500 ,Hp Slime naik 500");
+    }
         
 }
 
