@@ -89,6 +89,13 @@ public class ActionMenu {
                     break;
                 case "4":
                     System.out.println("\n=========Info Menjalankan Program========");
+                    System.out.println("->  Pertama tentukan nama hero anda");
+                    System.out.println("->  Tentukan job class");
+                    System.out.println("->  Tentukan senjata");
+                    System.out.println("->  Tentukan lawan anda");
+                    System.out.println("->  Terakhir Mulai Pertaturan");
+                    System.out.println("=========================================");
+                    System.out.println("*   Setiap hero menyerang, Monster akan menyerang balik dengan tipe serangan yang sama.");
                     backToMenu();
                     break;
                 case "5":
@@ -98,6 +105,29 @@ public class ActionMenu {
         }
     }
 
+    public String getWeapon (){
+        String input;
+        System.out.println("\n===========Pilih Equipment===========");
+        System.out.println("1. Sword              (Rekomendasi Job Class: Basic, Warrior)");
+        System.out.println("2. Magic Wand         (Rekomendasi Job Class: Mage)");
+        System.out.println("3. Axe                (Rekomendasi Job Class: Warrior)");
+        System.out.println("=====================================");
+        System.out.print("Pilih Equipment\t: ");
+        input = newObj.nextLine();
+        return input;
+    }
+    
+    public String weaponOption(){
+        String input;
+        System.out.println("\n===========Select Option===========");
+        System.out.println("1. Use / Pakai");
+        System.out.println("2. Take Off / Lepas)");
+        System.out.println("=====================================");
+        System.out.print("Pilih\t: ");
+        input = newObj.nextLine();
+        return input;
+    }
+    
     public void backToMenu() {
     System.out.println("");
     System.out.print("Tekan [Enter] untuk kembali..");

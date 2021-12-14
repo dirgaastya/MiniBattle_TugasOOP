@@ -29,11 +29,12 @@ public class MainBattle {
     
       while(true){
             System.out.println("\n===========MiniBattle=============");
-            System.out.println("0. Tentang MiniBattle");
             System.out.println("1. Masukan Nama Hero");
             System.out.println("2. Tentukan Job Class Hero");
-            System.out.println("3. Tentukan Monster Monster Lawan");
-            System.out.println("4. Mulai Bertarung");
+            System.out.println("3. Tentukan Senjata");
+            System.out.println("4. Tentukan Monster Monster Lawan");
+            System.out.println("5. Mulai Bertarung");
+            System.out.println("0. Tentang MiniBattle");
             System.out.println("*  Keluar Program");
             System.out.println("==================================");
             System.out.print("Pilih\t\t: ");
@@ -52,29 +53,75 @@ public class MainBattle {
                 newAction.selectHero(option, inputNamaHero);
                 heroValue = option;
                 actionMenu.backToMenu();
-            } 
+            }
+//          Menentukan memakai senjata atau tidak
+            else if (input.equalsIgnoreCase("3")) {
+                String option = actionMenu.getWeapon();
+                switch(option){
+                    case "1":
+                        Weapon swordWeapon = new Sword();
+                        String weaponOpt = actionMenu.weaponOption();
+                        switch(weaponOpt){
+                            case "1":
+                                swordWeapon.equipWeapon();
+                                break;
+                            case "2":
+                                swordWeapon.noWeapon();
+                                break;
+                        }
+                        break;
+                    case "2":  
+                        Weapon magicWeapon = new MagicWand();
+                        String magicOpt = actionMenu.weaponOption();
+                        switch(magicOpt){
+                            case "1":
+                                magicWeapon.equipWeapon();
+                                break;
+                            case "2":
+                                magicWeapon.noWeapon();
+                                break;
+                        }
+                        break;
+                    case "3":
+                        Weapon axeWeapon = new Axe();
+                        String axeOpt = actionMenu.weaponOption();
+                        switch(axeOpt){
+                            case "1":
+                                axeWeapon.equipWeapon();
+                                break;
+                            case "2":
+                                axeWeapon.noWeapon();
+                                break;
+                        }
+                        break;
+                }
+                actionMenu.backToMenu();
+            }
 //          Menentukan Lawan
-            else if (input.equalsIgnoreCase("3")){
+            else if (input.equalsIgnoreCase("4")){
                 String option = actionMenu.getMonster();
                 newAction.selectMonster(option);
                 monsterValue = option;
                 actionMenu.backToMenu();
             }
 //          Bertarung
-            else if (input.equalsIgnoreCase("4")){
+            else if (input.equalsIgnoreCase("5")){
                 String option=heroValue;
                 switch(option){
 //                  Fungsi yang dipanngil apabila nilai hero = 1 / kita memilih basic hero 
                     case "1":
-                        newAction.basicFight(inputNamaHero,monsterValue);
+                        Hero newHero = new Hero(inputNamaHero);
+                        newAction.basicFight(newHero,monsterValue);
                         break;
 //                  Fungsi yang dipanngil apabila nilai hero = 2 / kita memilih mage                         
                     case "2":
-                        newAction.mageFight(inputNamaHero, monsterValue);
+                        Mage newMage = new Mage(inputNamaHero);
+                        newAction.mageFight(newMage, monsterValue);
                         break;
 //                  Fungsi yang dipanngil apabila nilai hero = 3 / kita memilih Warrior                   
                     case "3":
-                        newAction.warriorFight(inputNamaHero, monsterValue);
+                        Warrior newWarrior = new Warrior(inputNamaHero);
+                        newAction.warriorFight(newWarrior, monsterValue);
                         break;
                     default:
                         System.out.println("\nMaaf pilihan Anda tidak tersedia!");

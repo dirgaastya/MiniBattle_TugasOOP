@@ -12,13 +12,13 @@ public class Action extends ActionMenu {
 
     public void selectHero(String input, String name) {
         if (input.equalsIgnoreCase("1")) {
-            Hero newHero = new Hero(name);
+            
             System.out.println("Anda Memilih Job Basic Hero");
         } else if (input.equalsIgnoreCase("2")) {
-            Mage newMage = new Mage(name);
+            
             System.out.println("Anda Memilih Job Mage Hero");
         } else if (input.equalsIgnoreCase("3")) {
-            Warrior newWarrior = new Warrior(name);
+            
             System.out.println("Anda Memilih Job Warior Hero");
         }
     }
@@ -27,20 +27,17 @@ public class Action extends ActionMenu {
         String monsterValue = null;
         if (input.equalsIgnoreCase("1")) {
             System.out.println("Anda Melawan Mosnter Slime");
-            Monster slimeMonster = new Slime();
             monsterValue = "slimeMonster";
         } else if (input.equalsIgnoreCase("2")) {
-
-            System.out.println("Anda Memilih Job Mage Hero");
+            System.out.println("Anda Melawan Monster Goblin");
         } else if (input.equalsIgnoreCase("3")) {
-
-            System.out.println("Anda Memilih Job Warior Hero");
+            System.out.println("Anda Melawan Monster Indosiar Black Dragon");
         }
         return monsterValue;
     }
-
-    public void basicFight(String inputNama, String monsterValue) {
-        Hero hero = new Hero(inputNama);
+    
+    public void basicFight(Hero hero, String monsterValue) {
+        
         Monster newSlimeMonster = new Slime();
         Monster newGoblinMonster = new Goblin();
         Monster newIbdMonster = new IbdMonster();
@@ -141,8 +138,7 @@ public class Action extends ActionMenu {
 
     }
 
-    public void mageFight(String inputNama, String monsterValue) {
-        Mage mage = new Mage(inputNama);
+    public void mageFight(Mage mage, String monsterValue) {
         Monster newSlimeMonster = new Slime();
         Monster newGoblinMonster = new Goblin();
         Monster newIbdMonster = new IbdMonster();
@@ -242,12 +238,9 @@ public class Action extends ActionMenu {
                             System.exit(0);
                             break;
                         }
-                        // Pasif Monster 1x aktif
-                        if (newGoblinMonster.getHp() <= 300) {
-                            if (passiveCount == 0) {
-                                newGoblinMonster.passiveMonster();
-                                passiveCount++;
-                            }
+                        // Pasif Goblin hp dibawah 700 physical def & atknaik
+                        if (newGoblinMonster.getHp() <= 700) {
+                            newGoblinMonster.passiveMonster();
                         }
                         mage.defend(newGoblinMonster, "skill");
                         break;
@@ -303,8 +296,7 @@ public class Action extends ActionMenu {
         }
     }
 
-    public void warriorFight(String inputNama, String monsterValue) {
-        Warrior warrior = new Warrior(inputNama);
+    public void warriorFight(Warrior warrior, String monsterValue) {
         Monster newSlimeMonster = new Slime();
         Monster newGoblinMonster = new Goblin();
         Monster newIbdMonster = new IbdMonster();
@@ -366,7 +358,7 @@ public class Action extends ActionMenu {
                 }
             }
             // Goblin
-            else if (input.equalsIgnoreCase("2")) {
+            else if (monsterValue.equalsIgnoreCase("2")) {
                 switch (input) {
                     case "1":
                         warrior.attack(newGoblinMonster);
@@ -404,19 +396,16 @@ public class Action extends ActionMenu {
                             System.exit(0);
                             break;
                         }
-                        // Pasif Monster 1x aktif
-                        if (newGoblinMonster.getHp() <= 300) {
-                            if (passiveCount == 0) {
-                                newGoblinMonster.passiveMonster();
-                                passiveCount++;
-                            }
+                        // Pasif Goblin hp dibawah 700 physical def & atknaik
+                        if (newGoblinMonster.getHp() <= 700) {
+                            newGoblinMonster.passiveMonster();
                         }
                         warrior.defend(newGoblinMonster, "skill");
                         break;
                 }
             }
             // Ibd Monster
-            else if (input.equalsIgnoreCase("3")) {
+            else if (monsterValue.equalsIgnoreCase("3")) {
                 switch (input) {
                     case "1":
                         warrior.attack(newIbdMonster);
@@ -433,7 +422,6 @@ public class Action extends ActionMenu {
                             System.exit(0);
                             break;
                         }
-                        // Pasif Monster 1x aktif
                         // Pasif HHp diatas 1500 Physical Def++++++ dan Magic Def ++
                         if (newIbdMonster.getHp() >= 1500) {
                             newIbdMonster.passiveMonster();
