@@ -49,8 +49,8 @@ public class MainBattle {
             }
 //          Menentukan Job class Hero
             else if (input.equalsIgnoreCase("2")){
-                String option = actionMenu.getHero(inputNamaHero);
-                newAction.selectHero(option, inputNamaHero);
+                String option = actionMenu.getHero();
+                newAction.selectHero(option);
                 heroValue = option;
                 actionMenu.backToMenu();
             }

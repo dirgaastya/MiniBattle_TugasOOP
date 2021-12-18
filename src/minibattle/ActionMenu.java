@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class ActionMenu {
     Scanner newObj = new Scanner(System.in);
 
-    public String getHero(String nama) {
+    public String getHero() {
         String input;
         System.out.println("\n===========Pilih Job Class===========");
         System.out.println("1. Basic Hero   (Rekomendasi Lawan: Slime,Goblin)");

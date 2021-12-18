@@ -43,7 +43,15 @@ public class Mage extends Hero{
         System.out.println("Sisa HP monster " + enemy.name +" sebesar");
         System.out.println("==> "+ enemy.getHp() + "\n");
     }
-
     
+    @Override
+    public void showAttribut(){
+        System.out.println("Attribut Hero Mage " + this.name);
+        System.out.println("HP\t\t: " + this.hp);
+        System.out.println("ATK\t\t: " + this.atk);
+        System.out.println("MATK\t\t: " + this.matk);
+        System.out.println("DEF\t\t: "+ this.def);
+        System.out.println("MDEF\t\t: "+ this.mdef);
+    }
     
 }

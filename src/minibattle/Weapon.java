@@ -9,7 +9,9 @@ package minibattle;
  * @author user
  */
 public interface Weapon {
-    
+    int use = 100;
+    int remove = 0;
+
     void equipWeapon();
     void noWeapon();
 }

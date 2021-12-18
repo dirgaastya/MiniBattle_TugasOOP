@@ -10,7 +10,7 @@ package minibattle;
  */
 public class Action extends ActionMenu {
 
-    public void selectHero(String input, String name) {
+    public void selectHero(String input) {
         if (input.equalsIgnoreCase("1")) {
             
             System.out.println("Anda Memilih Job Basic Hero");
